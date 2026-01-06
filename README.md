@@ -31,8 +31,8 @@ Features, UI, and backend functionality are actively being built and may change 
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- Axios
-- React Router
+- Tailwind
+- Vite
 
 ### Backend
 - Node.js
