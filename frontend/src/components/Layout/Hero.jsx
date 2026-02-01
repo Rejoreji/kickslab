@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="text-center text-white p-6">
                 <h1 className='text-4xl md:text-9xl font-bold tracking-tighter uppercase mb-4 '>New Balance <br />990</h1> 
                 <p className='text-sm tracking-tighter md:text-lg mb-6'> Explore our newest collection</p>
-                <Link to="#" className="bg-black bg-opacity-15 text-white px-6 py-2 rounded-full text-xl hover:bg-opacity-50  " >
+                <Link to="#" className="bg-black bg-opacity-15 text-white px-6 py-2 rounded-full text-xl hover:bg-opacity-50 transition delay-120 " >
                 Shop Now
                 </Link>
             </div>

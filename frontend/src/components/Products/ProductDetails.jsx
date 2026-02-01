@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { toast } from 'sonner';
+import ProductGrid from './ProductGrid';
 const selectedProduct = {
     name:"Stylish Shoes",
     price:120,
@@ -17,6 +19,53 @@ const selectedProduct = {
         altText:"sneaker"
     },],
 }
+
+const similarProducts = [
+    {
+        _id: 1,
+        name: "Product 1",
+        price: 100,
+        images: [
+            {
+                url: "https://picsum.photos/500/500?random=2",
+                altText: "product 1"
+            }
+        ]
+    },
+    {
+        _id: 2,
+        name: "Product 2",
+        price: 100,
+        images: [
+            {
+                url: "https://picsum.photos/500/500?random=4",
+                altText: "product 2"
+            }
+        ]
+    },
+    {
+        _id: 3,
+        name: "Product 3",
+        price: 100,
+        images: [
+            {
+                url: "https://picsum.photos/500/500?random=5",
+                altText: "product 3"
+            }
+        ]
+    },
+    {
+        _id: 4,
+        name: "Product 4",
+        price: 100,
+        images: [
+            {
+                url: "https://picsum.photos/500/500?random=8",
+                altText: "product 4"
+            }
+        ]
+    }
+]
 
 const ProductDetails = () => {
     const [mainImage, setMainImage] = useState("")
@@ -38,10 +87,30 @@ const ProductDetails = () => {
         }
     }
 
+    const handleAddToCart = () => {
+        if(!selectedSize || !selectedColor){
+            toast.error("Please select size and color",{
+                duration: 1000,
+            });
+            return;
+            
+        }
+
+        setIsButtonDisabled(true);
+
+        // Simulate adding to cart process
+        setTimeout(() => {
+            toast.success("Product added to cart",{
+                duration: 2000,
+            });
+            setIsButtonDisabled(false);
+        }, 1000);
+    }
+
     return (
         <div className='p-6'>
             <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col md:flex-row ">
                     <div className="hidden md:flex flex-col space-y-4 mr-6">
                         {selectedProduct.images.map((image, index) =>(
                             <img 
@@ -94,7 +163,7 @@ const ProductDetails = () => {
                                     <button 
                                     key={color} 
                                     onClick={() => setSelectedColor(color)}
-                                    className={`w-8 h-8 rounded-full border ${selectedColor=== color ? "border-4 border-black" : "border-gray-300"}`}
+                                    className={`w-8 h-8 rounded-full border ${selectedColor=== color ? "border-4 border-white" : "border-gray-300"}`}
                                     style={{backgroundColor: color.toLocaleLowerCase(),
                                         filter:"brightness(0.5)",
                                     }}>
@@ -124,7 +193,10 @@ const ProductDetails = () => {
                                  className='px-2 py-1 bg-gray-200 rounded text-lg'>+</button>
                             </div>
                         </div>
-                        <button className="bg-black text-white py-2 px-6 rounded w-full mb-4"> ADD TO CART</button>
+                        <button onClick={handleAddToCart}
+                        disabled={isButtonDisabled}
+                         className={`bg-black text-white py-2 px-6 rounded w-full mb-4 ${isButtonDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-900"}`}> 
+                         {isButtonDisabled ? "Adding..." :  "ADD TO CART"}</button>
                         <div className="mt-10 text-gray-700">
                             <h3 className="text-xl font-bold mb-4">Characteristics:</h3>
                             <table className='w-full text-left text-sm text-gray-600'>
@@ -141,6 +213,13 @@ const ProductDetails = () => {
                             </table>
                         </div>
                     </div>
+                </div>
+                <div className="mt-20">
+                    <h2 className='text-2xl text-center font-medium mb-4'>
+                        You May Also Like
+                    </h2>
+                        <ProductGrid products={similarProducts}/>
+                    
                 </div>
             </div>
         
