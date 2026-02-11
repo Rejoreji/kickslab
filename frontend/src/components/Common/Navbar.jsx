@@ -26,23 +26,23 @@ const Navbar = () => {
         </div>
          {/* center navigation links */}
         <div className='hidden md:flex space-x-6'>
-            <Link to="/collections/all" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
+            <Link to="/collections/all" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
             men
             </Link>
-            <Link to="#" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
+            <Link to="#" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
             women
             </Link>
-            <Link to="#" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
+            <Link to="#" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
             unisex
             </Link>       
         </div>
         {/* right icons */}
         <div className="flex items-center space-x-4"> 
         <Link to="/profile" className='hover:text-black'>
-        <HiOutlineUser className='h-6 w-6 text-gray-700'  />
+        <HiOutlineUser className='h-6 w-6 text-gray-700 hover:text-black'  />
         </Link>
         <button onClick={toggleCartDrawer} className='relative hover:text-black'>
-            <HiOutlineShoppingBag className='h-6 w-6 text-gray-700'/>
+            <HiOutlineShoppingBag className='h-6 w-6 text-gray-700 hover:text-black'/>
             <span className='absolute -top-1 -right-3 bg-[#2B2B2B] text-white text-xs rounded-full p-2 py-0.5'>
                 4
             </span>

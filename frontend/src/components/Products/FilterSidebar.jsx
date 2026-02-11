@@ -78,7 +78,7 @@ useEffect(() =>{
     }
 
   return (
-    <div className='p-4 rounded-lg '>
+    <div className='p-4 rounded-lg overflow-visible border mb-6 mt-6 ml-6'>
         <h3 className="text-xl font-medium text-gray-800 mb-4">Filters</h3>
 
         {/*  Category Filter */}
@@ -150,7 +150,7 @@ useEffect(() =>{
         {/* Price Range Filter */}
         <div className="mb-8">
             <label className='block text-gray-600 font-medium mb-2'>Price Range</label>
-            <input type="range" name="price" min={0} max={1000} value={priceRange[1]} onChange={handlePriceChange} className='w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer'/>
+            <input type="range" name="price" min={0} max={1000} value={priceRange[1]} onChange={handlePriceChange} className='w-full h-2 accent-black rounded-lg cursor-pointer '/>
             <div className="flex justify-between text-sm text-gray-600 mt-2">
                 <span>$0</span>
                 <span>${priceRange[1]}</span>
