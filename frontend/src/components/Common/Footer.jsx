@@ -20,7 +20,7 @@ const Footer = () => {
                 </p>
                 {/* Newsletter form */}
                 <form className='flex '>
-                    <input type="email" placeholder='Enter your email' className='p-3 w-full text-sm rounded-l-md focus:outline-none focus:ring-2 focus:ring-black transition-all bg-[#2B2B2B]'  required/>
+                    <input type="email" placeholder='Enter your email' className='p-3 w-full text-sm rounded-l-md focus:outline-none focus:ring-2 focus:ring-black transition-all bg-[#2B2B2B] text-white'  required/>
                     <button type='submit' className='bg-white text-black px-6 py-3 text-sm rounded-r-md rounded-l hover:bg-blue-700 hover:transition-colors duration-300'>
                         Subscribe
                     </button>

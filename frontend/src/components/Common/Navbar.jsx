@@ -26,14 +26,17 @@ const Navbar = () => {
         </div>
          {/* center navigation links */}
         <div className='hidden md:flex space-x-6'>
-            <Link to="/collections/all" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
-            men
+            <Link to="/collections/all" className='group relative w-fit text-sm font-medium text-gray-600 uppercase '>
+                <span>Men</span>
+                <span className="absolute -bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-black transition-transform duration-300 ease-out group-hover:scale-x-100 " />
             </Link>
-            <Link to="#" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
-            women
+            <Link to="#" className='group relative w-fit text-sm font-medium text-gray-600 uppercase hover:text-black'>
+                <span>Women</span>
+                <span className="absolute -bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-black transition-transform duration-300 ease-out group-hover:scale-x-100" />  
             </Link>
-            <Link to="#" className='text-gray-700 hover:text-black hover:underline text-sm font-medium uppercase'>
-            unisex
+            <Link to="#" className='group relative w-fit text-sm font-medium text-gray-600 uppercase hover:text-black'>
+                <span>Unisex</span>
+                <span className="absolute -bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-black transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </Link>       
         </div>
         {/* right icons */}
