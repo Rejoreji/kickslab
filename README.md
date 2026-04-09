@@ -62,5 +62,4 @@ Features, UI, and backend functionality are actively being built and may change 
 
 ## 📌 Disclaimer
 - KickLab is not a production-ready application.
-- It is built strictly for educational and practice purposes.
 
