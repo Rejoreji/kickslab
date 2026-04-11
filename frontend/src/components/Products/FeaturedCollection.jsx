@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import featured from "../../assets/kick1.jpg" 
+import featured from "../../assets/Kick1.jpg" 
 
 const FeaturedCollection = () => {
   return <section className='py-16 px-4 lg:px-0'>
